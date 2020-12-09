@@ -1,0 +1,9 @@
+Strings in Javascript are Immutable;
+That means that you can only change the whole value in JavaScript like
+var st = "Hola"
+st = "Adios"
+
+but you cannot 
+
+st[0] = 'C' // this is wrong you cannot do it.. this inmutability is only in Javascript; because in rust you cannot change the value of a immutable variable
+///he individual characters of a string literal cannot be changed.
