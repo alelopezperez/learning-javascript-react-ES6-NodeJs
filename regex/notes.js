@@ -20,8 +20,8 @@ otherRegex.test(myString); //return false
 //you can alternate literal matchin with OR | 
 
 let petString = "James has a pet cat.";
-let petRegex = /dog|cat|bird|fish/; // Change this line
-let errRegex = /dog | cat | bird | fish/; // Error because of the whitespace is read as an character
+let petRegex = /dog|cat|bird|fish/; 
+let errRegex = /dog | cat | bird | fish/; 
 let result = petRegex.test(petString);
 
 // Ignore cases with the i flag
@@ -32,8 +32,8 @@ let result = fccRegex.test(myString);
 
 // Now if you want to get the match you need to use the function match on the string that recieves a regex. not the regex
 let extractStr = "Extract the word 'coding' from this string.";
-let codingRegex = /coding/i; // Change this line
-let result = extractStr.match(codingRegex); // Change this line
+let codingRegex = /coding/i; 
+let result = extractStr.match(codingRegex); 
 
 console.log(result[0]);
 
@@ -52,7 +52,7 @@ console.log(result)
 // This is just the when you use the dot, as a wildcard, that means that it coul mean any on character.
 
 let exampleStr = "Let's have fun with regular expressions!";
-let unRegex = /.un/; // to match run fun 
+let unRegex = /.un/; 
 let result = unRegex.test(exampleStr);
 
 
@@ -67,15 +67,50 @@ let bagStr = "bag";
 let bugStr = "bug";
 let bogStr = "bog";
 let bgRegex = /b[aiu]g/;
-bigStr.match(bgRegex); // Returns ["big"]
-bagStr.match(bgRegex); // Returns ["bag"]
-bugStr.match(bgRegex); // Returns ["bug"]
-bogStr.match(bgRegex); // Returns null
+bigStr.match(bgRegex); 
+bagStr.match(bgRegex); 
+bugStr.match(bgRegex);
+bogStr.match(bgRegex); 
 
+let bgRegex = /[a-e]at/;
 
 // Character class 
 
 // if you want to go in order inside throu letter you can just specify the startin pos and ending pos
-// using inside the character class the -
 
-let bgRegex = /[a-e]at/;
+// You can do the character clas with number
+// e,g [4-6] and also combine it inside
+// like this [a-t2-5]
+
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; 
+let result = quoteSample.match(myRegex); 
+
+
+// negated character set
+
+// using inside the character class the -
+// if you put ^  at after opening tha charaacter/numer class ([) all the stuff inside of it will be negated
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi;
+let result = quoteSample.match(myRegex); 
+
+
+// Regex in compiler class also known as + this means one or more
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/gi; 
+let result = difficultSpelling.match(myRegex);
+
+console.log(result)
+
+
+
+// Using * this means zero or more instead of one or more
+
+
+let chewieRegex = /Aa*/; 
+let result = chewieQuote.match(chewieRegex); 
+
+
+
+
