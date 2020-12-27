@@ -121,6 +121,28 @@ console.log(result);
 
 
 // TEST
+
 let reCriminals = /C+/; // Change this line
 
+
+// The Caret Character
+// Ourside of a character class it specifies; that the regex needs to be found as the firt subsstring position 0
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; 
+let result = calRegex.test(rickyAndCal);
+
+
+// The Dolla Sign
+// Always Outisde of a character class?? it specifies that the matchin regex should be the last one in the string.
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/;
+let result = lastRegex.test(caboose);
+
+// [A-Za-z0-9_] =\w
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
+
+console.log(result)
 
