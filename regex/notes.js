@@ -165,6 +165,12 @@ console.log(result);
 // \D =[^0-9]
 
 
+let username = "z5";
+let userCheck = /^[a-z][a-z]+[0-9]*$|^[a-z][0-9][0-9]+$/i;
+let result = userCheck.test(username);
+
+console.log(result)
+
 
 
 
