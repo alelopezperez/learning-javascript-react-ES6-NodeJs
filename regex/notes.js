@@ -114,7 +114,7 @@ let result = chewieQuote.match(chewieRegex);
 //Lazy Match
 //By default regex will return the maximum substring that fits the regex. like when using * or +.
 let text = "<h1>Winter is coming</h1>";
-let myRegex = /<[a-z]+?[0-9]+?>/; // Change this line
+let myRegex = /<[a-z]+?[0-9]+?>/; 
 let result = text.match(myRegex);
 
 console.log(result);
@@ -144,5 +144,27 @@ let quoteSample = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g; // Change this line
 let result = quoteSample.match(alphabetRegexV2).length;
 
+
 console.log(result)
+
+// \W =[^A-Za-z0-9_] capiltar W
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+console.log(result)
+
+
+// \d = [0-9]
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // Change this line
+let result = movieName.match(numRegex).length;
+
+console.log(result);
+
+// \D =[^0-9]
+
+
+
+
 
