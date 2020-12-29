@@ -171,6 +171,82 @@ let result = userCheck.test(username);
 
 console.log(result)
 
+// Matching WhiteSpace
+//This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters.  using \s
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result = sample.match(countWhiteSpace);
+
+/// Matching Non White Space
+// Using \S = [^ \r\t\f\n\v]
 
 
+
+// Quantity Specifiers
+// With Curly braces after the letter or character class you can specify lower and upper limit using {}
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
+
+
+/// With Quantity Specifiers you can specify only the lower Limit like this 
+// {n,}
+
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result = haRegex.test(haStr);
+
+
+// With Quantity Specifier you can specify exact number
+// Like this  {n}
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
+
+
+// Using Question Mark ?; like *, or +.
+// But ? specifies 0 or 1
+
+let favWord = "favourite";
+let favRegex = /favou?rite/;
+let result = favRegex.test(favWord);
+
+console.log(result);
+
+
+// Regex Lookahed Challenge weird
+let sampleWord = "bana12";
+let pwRegex = /^\D(?=\w{5})(?=\w*\d{2})/;; // Change this line
+let result = pwRegex.test(sampleWord);
+
+console.log(result)
+
+// Groups Using Or 
+
+let myString = "Franklin A. Roosevelt";
+let myRegex = /(Franklin|Eleanor)[ \w.]* Roosevelt/; // Change this line
+let result = myRegex.test(myString); // Change this line
+console.log(result);
+
+
+/Reuse Patterns 
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result = reRegex.test(repeatNum);
+
+// More About CAputer Groups And Replace
+let str = "one two three";
+let fixRegex = /(one)\s(two)\s(three)/; // Change this line
+let replaceText = '$3 $2 $1'
+let result = str.replace(fixRegex, replaceText);
+
+console.log(result);
+
+
+//Replace with Regex
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+let result = hello.replace(wsRegex, ""); 
+
+console.log(result)
 
