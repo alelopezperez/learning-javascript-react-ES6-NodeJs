@@ -15,3 +15,10 @@ console.log(typeof (seven + three));//string
 //adding a string and number appends in string style
 
 // When misspelling it will intrepe it as an object that does not exist
+
+/// You can store function in a variable in js
+function myFunction() {
+  return "You rock!";
+}
+let varOne = myFunction; // set to equal a function
+let varTwo = myFunction(); // set to equal the string "You rock!"
