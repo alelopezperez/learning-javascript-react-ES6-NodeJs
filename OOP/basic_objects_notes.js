@@ -218,10 +218,302 @@ console.log(dog); //{name:"b"}
 console.log(neuDog); //undefined
 
 
+/* Prototype Multi-Add
+	To add more than prototype to a "class" "constructor??"
+	It's needed to add them as an object.
+*/
+
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  numLegs : 2,
+  eat : () => {return "eat func";},
+  describe : () => {return "desc func";}
+};
+
+/* Adding Protoype Side Effects;
+	Adding protoype to an object like i've done
+	Destroys the obj.constructor the constructor property
+*/
+
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+let cat = new Dog("cat");
+console.log(cat.constructor === Dog) //true
+
+Dog.prototype = {
+
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  },
+};
+
+cat = new Dog("cat");
+console.log(cat.constructor === Dog) //false
+console.log(cat instanceof  Dog) // true.
+
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+let cat = new Dog("cat");
+console.log(cat.constructor === Dog) //true
+
+Dog.prototype = {
+
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  },
+  constructor: Dog
+};
+
+cat = new Dog("cat");
+console.log(cat.constructor === Dog) //true
+
+
+/* Objects isPrototypeOf
+
+var human = {mortal: true}
+var socrates = Object.create(human);
+human.isPrototypeOf(socrates); //=> true
+socrates instanceof human; //=> ERROR!
+
+*/
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+console.log(Dog.prototype.isPrototypeOf(beagle));
+
+
+/* Object is the superclass of all created objects
+
+
+*/
+
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+Dog.prototype.isPrototypeOf(beagle);  // yields true
+
+// Fix the code below so that it evaluates to true
+console.log(Object.prototype.isPrototypeOf(Dog.prototype));
+
+
+/* Inheritance Objects Parent classes superclass
+ 	When using Object.create(Animal.prototype);
+ 	the result object will be empty.
+
+*/
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+  
+};
+
+function Animal() { }	
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+let duck = Object.create(Animal.prototype); ; // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
 
 
 
+let duck = Object.create(Animal.prototype); ; // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
+let animal = Object.create(Animal.prototype);
+beagle.eat();
 
+
+
+/* Full Inheritance And Fixing the constructor Function.
+*/
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype)
+
+let beagle = new Dog();
+
+beagle.eat();
+
+console.log(beagle.constructor) //Animal
+
+console.log(beagle instanceof Animal) //True
+
+console.log(beagle instanceof Dog) //True
+
+
+beagle.constructor = Dog;
+
+// Doing Everything Together
+// Remmber that till now you cannot use the multi add inhereting from Animal.
+
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = ()=>{console.log("Woof!")}
+
+
+let beagle = new Dog();
+beagle.bark()
+beagle.eat();
+
+
+/* Override Inherited Methods
+
+	after doing everythin you did before you can override a property for a specific child 
+	by just readding it.
+	
+	obj.prototype.ovewrittenprop = anyhingYouWAnt;
+
+*/
+
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+Penguin.prototype.fly = ()=>{return "Alas, this is a flightless bird."};
+
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+
+
+/*
+	Function That Add Props to unrelated objects, so no inheritance
+*/
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+bird.prototype = {
+  gli : () => {console.log("Woo");}
+}
+function glideMixin(obj){
+  obj.glide = () => {console.log("Woo");}
+}
+
+glideMixin(bird);
+glideMixin(boat);
+
+
+
+/* Private Variables in Objects
+
+*/
+
+function Bird() {
+  let weight = 15; //private
+  this.getWeight = ()=> { return weight;} //cant use this.weight
+  this.age = 15;
+
+
+}
+
+let bird = new Bird();
+console.log(bird);
+console.log(bird.getWeight())
+
+/* Immediately Call a Func 
+	(somethiFUnc)();
+
+*/
+(function makeNest() {
+  console.log("A cozy nest is ready");
+})();
+
+(function () {
+  console.log("A cozy nest is ready");
+})();
+
+
+( () => {console.log("A cozy nest is ready");}
+)();
+
+//Werid Mixin and Immediate
+
+
+let funModule = ( () => {
+  return {
+    isCuteMixin: (obj) => {
+      obj.isCute = () => { true; };
+    },
+    singMixin: (obj) => {
+      obj.sing = () => { console.log("Singing to an awesome tune"); }
+    }
+
+  }
+})();
 
 
 
