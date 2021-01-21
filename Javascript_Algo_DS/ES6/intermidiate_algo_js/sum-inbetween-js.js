@@ -14,3 +14,17 @@ function sumAll(arr) {
   return ans+sum;
 
 }
+
+function sumAll(arr) {
+ let sum = 0
+ let [low, high] = [arr[0],arr[1]];
+ if(low>high) [low,high] = [high,low];
+  for(let i = low; i<=high; i++)
+    sum +=i;
+
+
+  return sum;
+
+}
+
+console.log(sumAll([4,1]));
