@@ -71,8 +71,14 @@ Creating Reusable Configurable Component
 React Props
 - Passing data from parent component to child component
 - Customize or configure the child
+- you cannot pass data from child to parent
 
-	
+to pass down property from the parent:
+<Compenent propname = {var} />
+<Compenent propname = literal />
+
+in the component the first arguments are the props
+const Component = (props) => {}
 	
 	
 	
