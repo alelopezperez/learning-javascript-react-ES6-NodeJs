@@ -57,6 +57,21 @@ Reactt Philosphy
 - Nesting
 - Reusability
 - Configuration
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+
+
+Creating Reusable Configurable Component
+- Indetify the replicate jsx
+- create a name
+- create a new file for the component
+- In the new file create the new component by copy pasting	
+
+
+React Props
+- Passing data from parent component to child component
+- Customize or configure the child
+
 	
 	
 	
