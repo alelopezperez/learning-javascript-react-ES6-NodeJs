@@ -1,0 +1,12 @@
+
+<div>
+	<label class="label" for="name"> Enter Name </label>
+	<input id="name"/>
+	<button>Submit</button>
+</div>
+
+
+
+//for make that when you click the element it selects the target for
+
+

@@ -1,0 +1,66 @@
+React Component
+
+name component ->return-> JSX
+produces jsx		   set of instruction that tell what to show
+and handles
+user event
+
+JSX Element
+-tell react to create a normal html element
+-tell react  to show another react component
+
+project directory
+-src : folder where we put all source code we write (js, ts, jsx)
+-public : folder that stores static files, like images, and maybe another html
+-node_modules : Folder that contatin all our project installed dependeces; npm packages
+-package.json: records our project dependencies
+-package-lock(yarn.lock) records the exact version of the packages that we installed.
+-readme it's a readme
+
+
+React Notes
+-a react compenten can be a class or a functional(yay Functional Programming)
+JSX Project
+-src
+	- Only index.js
+		import ReactDOM from 'react-dom'
+			reacdom can be any name
+			
+JSX vs HTML
+	-adding custom styling is with different styling
+		- you nee to add {{ }} two curly brace
+			-the first { javascript var
+			- the second { is fot js object that i learned in freecodecamp
+				- this are the properties
+				- i learned that
+		- any styling uses cammelCase convention
+		-also no ""
+		-so props goes like this
+			-border : '1px solid red'
+			-because props is a var or a primitive
+			- in this case we use strings
+	-class in html is different in jsx
+		-instead of class use className
+		-because class is already taken in js
+	- You can reference js variable in jsx
+		-with {}
+		
+		- Limitations:
+			-with objects you need to use the key
+			-you cant show the whole obj as a html attribute
+			
+JSX this is just a convention
+	- all string are in double quotes
+	- non jsx use single quotes
+	
+Reactt Philosphy
+- Nesting
+- Reusability
+- Configuration
+	
+	
+	
+	
+	
+	
+	
