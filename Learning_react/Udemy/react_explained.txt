@@ -79,9 +79,126 @@ to pass down property from the parent:
 
 in the component the first arguments are the props
 const Component = (props) => {}
+
+Functional Components vs Class Components
+- FP Components produces jsx to show content to the user
+- Class compoents can also produce jsx to show content to the user
+- Class can use the lifecycle
+- class can use the state system to update content on screen live
+
+Functional Component with Hooks
+- Can produce jsx
+- can use hooks to run code at specific points in the lyfecle
+- can use hooks to acces state system and update content on screen
+
+
+Life Cycle in Seasons App
+- JS file loaded into the broweser (pre calc)
+- App component get created
+- App component contructo function get called
+- state object is created and assigned this.state propertie
+- we call geolocations service
+- React Calls the compenten render method 
+- App retuns jsx gets rendered as HTML
+- We get the reusult of geolocation
+- We update our state object with a call to this.setstate
+- React sees the change 
+- react call out render method again
+- render mehtos returns the some part of the jsx updated
+- react take that jsx and updates content on screen
+
+
+Class Components
+- Must be  javscript class
+- Must Extend from React.Component
+- Must define a rende method the returns jsx
+
+Rules Of State in React 
+- Only Usable with class components (unless we use HOOK!)
+- Dont confuse props with state
+- State is a JS object that containts data relevant to a component
+- Updating 'state' on a componente causes the component to (almost) instantly render
+- State must be initialized when a compoenent is created
+- setState is the only way to update the 
+
+	
+Handling Errors in a React Project
+- Dont just console.log the error show to the user what was the error
+
+
+Component LifeCycle
+- Constructor
+	- Good Place to do intial one time setup
+		- Perfect place to intialiaze state objects
+- render : content visible on screen
+	- only use it to return jsx
+- componentDidMount : sit and wait for updates only run once
+	- good place to do data loading
+	- this get executed only one time
+- componentDidUpdate : sit and wait until this component is not longer shown
+	- good place to do mote data loading when state or props changes
+- componentWillUnmount
+	- good place to do clean up(especially for non react stuff)
+	
+-Others
+	- shouldComponentUpdate
+	- getDerivedStateFromProps
+	- getSnapshotBeforUpdate
+	
+
+Class Components
+- Intializing states
+	- The first simple way is to just put in yout constructor
+		- this.state = {key:val, key2 : val}
+- Remember in class components that are like objects in react we have specific functions
+	that map to specific lifecycle methods
+	
+- The only mandatory function needed in a class components is render
 	
 	
-	
-	
-	
+- In JS months (new Date().getMonth()) is 0 indexed. Jan = 0;
+
+
+JS Tricks config object
+Use a js object for configuration of React components
+const seasonConfig = {
+	summer: {
+		text: "Let's Hit The Beach",
+		iconName: 'Sun',
+	},
+	winter: {
+		text: "Burr, It's Chilly",
+		iconName: 'snowflake',
+	},
+};
+
+
+What Happens when importing CSS in react
+- Thanks To WebPack
+	-It takes the css and puts it in the index.html
+
+
+Default Props
+Spinner.defaultProps = {
+	message : "Loading..."
+}
+- Default Values when we don't pass the props to the children, avoid using {props.something|| default value}
+
+Avoid Conditional Render
+- To avoid condtional rendering move the logic to a helper function and call it in the 
+render function
+
+Season Project Finale
+- Remember with class we use this.state.something not, this.something; it's not props it's state
+
+
+
+
+
+
+
+
+
+
+
 	
