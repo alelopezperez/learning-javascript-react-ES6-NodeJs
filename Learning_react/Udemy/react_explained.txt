@@ -262,7 +262,11 @@ Problems with This
 		the first one to finished will be executed
 	}
 
+You can return an array of htlm tags as an valid jsx
 
+
+Keys in List
+- Add prop key in html tag to the root element of the list
 
 
 
