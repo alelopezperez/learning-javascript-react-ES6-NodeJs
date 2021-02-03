@@ -193,6 +193,74 @@ Season Project Finale
 
 
 
+------------------------- Section 7 ------------------------------------
+
+Event Handlers
+- Obviously when we pass a function for onChange we pass the reference of the function
+using this if we are inside a class component
+	- onChange={this.onInputchange} // this formar since it's jsx	
+- When we pass the function we pass an argument usually called event
+	- onInputchange(event)
+	
+- You can pass arrow functions as event handlers
+	onChange = {(event)=> {do something;	}}
+		- we use this for a single line of code
+		
+Controlled vs Uncontrolled Elements
+	- Controlled Flow
+		- User types input
+		- callback get's invoked
+		- we call setState with the new value
+		- Component rerenders
+		- Input is told what its value is (coming from state)
+setState is like an asynchronous fucntion or a request
+- So if you call console.log after a setState; it will not be the updated value;
+- that's why setState has a callback function available for user.
+
+Default Form and input Behaviour
+- Pressing Enter on a input select element, submits the form.
+- Submiting a form refreshed the page
+
+Problems with This
+- We all know that this is a keyword that references the instantiated class
+- How does js figures out this
+	- this comes not from the class, but from where the function was called.
+		-this means left from the dot
+	- SOLUTIONS
+		class Car{
+		 	constructor(){
+		    this.drive = this.drive.bind(this);
+		  }
+		  setDriveSound(sound){
+		    this.sound = sound;
+		  }
+		  drive(){
+		    return this.sound;
+		  }
+		}
+
+
+		const car = new Car();
+
+		car.setDriveSound('ale')
+		car.drive();
+
+		const truck = {
+		  sound: "truck",
+		  driveT : car.drive
+		}
+
+		const drive = car.drive
+		drive()
+- On Class components props is inside this
+
+
+-Await is only blocking inside the function; if you call two async functions then it will not be blocking 
+	function al(){
+		thisAsyncFunc();
+		thisAsyncfunct2(); 
+		the first one to finished will be executed
+	}
 
 
 
