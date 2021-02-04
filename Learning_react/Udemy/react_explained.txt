@@ -268,6 +268,23 @@ You can return an array of htlm tags as an valid jsx
 Keys in List
 - Add prop key in html tag to the root element of the list
 
+Ref Sysystem
+- React Ref gives acces to a single DOM element
+- We create refs in the constructor, assign them to instance variables, then pass to a particular
+jsx element as a props
+- There is no need to link it to a state of the class, because it doesnt change overtime once is set
+- Ref system is the only way to acces the dom elements, since the tags in JSX are JSX not html/dom elemnts
+- The Console Log Problem
+	-Remember that the img uses src; so it will fetch the image; by the time it get the image; the console log already ran.
+	-thats why when re-rendering, the console logs again but with the images loaded.
+-this.someRef.addEventListener('load',callback) is the same as <someTag onLoad={callback} />
+
+when key and value are the same you can just use the var_name
+		this.setState({ spans: spans }) == this.setState({ spans });
+
+ 
+
+
 
 
 
