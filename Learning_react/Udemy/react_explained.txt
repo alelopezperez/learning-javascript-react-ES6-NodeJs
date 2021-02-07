@@ -282,6 +282,7 @@ jsx element as a props
 when key and value are the same you can just use the var_name
 		this.setState({ spans: spans }) == this.setState({ spans });
 
+If in a callback or evente handler i pass the function with func() and not like func; it will obviously excuted the moment is rendered and not when the event is triggered
  
 
 
