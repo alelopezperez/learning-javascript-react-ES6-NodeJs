@@ -283,11 +283,79 @@ when key and value are the same you can just use the var_name
 		this.setState({ spans: spans }) == this.setState({ spans });
 
 If in a callback or evente handler i pass the function with func() and not like func; it will obviously excuted the moment is rendered and not when the event is triggered
+
+
+--------------------------------------------- Section 11 -------------------------------------------
+
+Hooks System
+- useState
+	-let me use state in a functional way like when we use setState
+- useEffect
+	- This is to do something similiar like lifecycle methods e.g componentDidMount
+- useRef
+	- create Ref in a functional component
+	
+
+Primitive Hooks
+- useState
+- useReducer
+- useRef
+- useDebugValue
+- useEffect
+- useCallback
+- useImperativeHandle
+- useContext
+- useMemo
+- useLayoutEffect
+
+Custom Hooks	
  
+Always think where state should live, in which component
 
 
+Separate constant variable that dont change from the state like variable in react
 
 
+Sometime you UI framework could have problems with surrounding divs so use React.fragments
+
+- When to search
+	When state has updated and compenent renredered to give time to know when the user finished typing
+	
+useEffect 
+- Allow Function components to use somothing similar to lifecycle methods
+- we configure the hook to run somecode, a callback. in on of the 3 scenarios
+	1 When the component is rendered the first time only
+		[]
+	2 when the componenent is rendered the firstime and after it re-renders
+		... nothing ...
+	3 When the compoenete is rendered for the first time OR (after it re-renders and after some piece of data(state) [anY, OF, this,will,count])
+		[data]
+Remember what you learned in FreeCodeCamp: how to immediatly call an arrow function IIFE
+
+NO-RETURN_AWAIT
+and asycn function cannot return a value only a promise
+
+Destructre nested object is from left to right with the keys on the left
+
+Throttling API Request
+- Input change => startSetTimeout
+- Input CHnage => cancel Prevous SetTimeout; staet another timeout
+- setTimeout finished => make a request
+-input change => startSetTimeout
+
+USEEFFECT ALWAYS RUN ON UBMMOUNT
+
+
+useEffect CleanUp functions
+- useEffect can return nothing or a cleanup function
+- When does it call the clenup function
+	- It will not call it on intial re-render; so with [], it will never be called only on unmount
+	- This includes unmount
+	- When the targeted variables changes it will cleanup
+	- or if you specify nothing; in each rerender
+- All the variables above the function still existe; the useffect has been called; so local var are still the same a before
+
+useffect [varible] HOW to check if initial render
 
 
 
