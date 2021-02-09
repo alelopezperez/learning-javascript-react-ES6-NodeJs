@@ -357,6 +357,16 @@ useEffect CleanUp functions
 
 useffect [varible] HOW to check if initial render
 
+- useEffect only with props and state, also dependencies aray warning
+- Hook Missing Dependencies
+	- If you use a dependencie like [term]  or [] and use another prop or state inside it you will have a problem
 
+- Be careful with just adding another value to dependency it coul cause a infinite call to useEfect
 
+Debouncing to FIX useEffect dependeciy matrix
+- TO fix this in the app instead of depending of another state for the useEffect; inderectly nest to useEffect
+- one to update the next state; and the other useffect will be no need to know if it's the first time or not
+when updating state if it's the same value then it woul not count as changing the state
 	
+- In ReactJS you can passdown the setVar() (the setter), from useState, down to another child, you cannot do that with class-based components since you will have problems with this.
+		-Renders go from top to bottom and mounts from bottom to top. 
