@@ -343,7 +343,7 @@ Throttling API Request
 - setTimeout finished => make a request
 -input change => startSetTimeout
 
-USEEFFECT ALWAYS RUN ON UBMMOUNT
+USEEFFECT ALWAYS RUN ON UBMMOUNT even on the one use only initial useEffect
 
 
 useEffect CleanUp functions
@@ -369,4 +369,20 @@ Debouncing to FIX useEffect dependeciy matrix
 when updating state if it's the same value then it woul not count as changing the state
 	
 - In ReactJS you can passdown the setVar() (the setter), from useState, down to another child, you cannot do that with class-based components since you will have problems with this.
-		-Renders go from top to bottom and mounts from bottom to top. 
+		-Renders go from top to bottom and mounts from bottom to top.
+		
+- HTML jsx tags cannot liste to events from its parent only from its children
+- IN HTML event handler go up from the trigered chidren to all it's predecesors(parents)
+	- so if a parent div has a onclick it will be activted by it's children onclick
+	
+Manual Event Listener
+	- When you reference directly the html: like document.body.addEventListener('click', ()=> console.log("Hola"));
+	- First the dom, the the react ones get called if you do it manually
+	- the eventlistener will still live in wherever you put it
+	
+useRef
+	- to connect a useRef varialbe put it inside a ref html tag likeso <div ref = {usrefvar}>
+	- ref has a functions contains to know ref.current is the parent of another element
+	
+
+
