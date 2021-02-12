@@ -384,5 +384,7 @@ useRef
 	- to connect a useRef varialbe put it inside a ref html tag likeso <div ref = {usrefvar}>
 	- ref has a functions contains to know ref.current is the parent of another element
 	
+You can destructure the await from a request
+	
 
 
