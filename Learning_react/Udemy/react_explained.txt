@@ -385,6 +385,17 @@ useRef
 	- ref has a functions contains to know ref.current is the parent of another element
 	
 You can destructure the await from a request
+
+if a component does not have jsx, just logic
+
+Custom Hooks
+- To extrac logic and make it like a global variable/function
+	- Components Reusable JSX
+	- Custom hooks reausable logic
+- Custom hooks always use at leat on primite hook internally
+- One Hook one purpose
+- data fetching a great candidate for a custom hook
+- Best Way to Create resuable hooks code besides components
 	
 
 
