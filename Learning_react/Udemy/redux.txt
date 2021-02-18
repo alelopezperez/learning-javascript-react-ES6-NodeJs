@@ -1,0 +1,8 @@
+Redux Cycle
+- Action Creator
+	-THE FUNCTION?
+- Action
+	-type,payload
+- Dispatch
+- Reducers
+- State

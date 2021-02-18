@@ -396,6 +396,9 @@ Custom Hooks
 - One Hook one purpose
 - data fetching a great candidate for a custom hook
 - Best Way to Create resuable hooks code besides components
+
+Redux
+
 	
 
 
