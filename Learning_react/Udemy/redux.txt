@@ -6,3 +6,9 @@ Redux Cycle
 - Dispatch
 - Reducers
 - State
+
+
+named export need a curly braces, default does not
+
+
+mapStateToProps; puts in props the state from redux
