@@ -12,3 +12,20 @@ named export need a curly braces, default does not
 
 
 mapStateToProps; puts in props the state from redux
+
+Redux Thunk
+- Middleware to us make request in a redux app	
+
+	General Data Loading Redux
+		- Compoenet gets rendered on screen
+		- IN CLASS use componenetDidMount gets called
+			- We call action creator from componentDidMount
+		- Action creator runs code to make API request
+		- API responds with data
+		- Action cretor return an action with the fetched data on the payload property
+		- Some Reducer sees the action return the data off the payload
+		- Becaue we generated some new state objet, react redux make the app re-render
+		
+Action Creator should only return a plain JS Object
+- The prblem is both calling it a async
+		
