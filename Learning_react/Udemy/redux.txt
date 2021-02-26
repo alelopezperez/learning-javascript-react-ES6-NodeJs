@@ -27,5 +27,35 @@ Redux Thunk
 		- Becaue we generated some new state objet, react redux make the app re-render
 		
 Action Creator should only return a plain JS Object
-- The prblem is both calling it a async
+- The prblem is using await
+
+Rules of Reducers:
+- Must Return any value besided undifined
+- Produces state or dta to be used inside of your app using only previous state and the action (reducers are pure)
+	- can not get data outside of the function; cannot use an api request, data of a file in HDD or DOM value
+- must no return reach 'out of itself' to decide what value to return
+- must no mutate its input state argument
+	-you can but it depends
+		- if you change it state will change but it will not broadcast or alert to any other aplication that the state has changed in case of react no re-render
 		
+=== triple equal just check if it reference the same value in memory
+	it works on primitive and string
+		- 1=== 1 true
+		- const num = [1,3] 
+			- num === [1,3] false
+Inmmutable Way of changin values
+	- in OBJ
+		{...obj, key:value} if key is the same in the prevous object it will replace it, if not it will add it, if value equals to undifined it will remove it but the key/value pair will still be visible
+		let {['a']: omit, ...res} = obj //removes a key/value without mutating
+		
+		
+		
+		const obja ={a:1, a:2}	
+		obja
+		{a: 2}
+		
+redux thunk has get state
+		
+MapState to Props has a second argument
+(status, ownProps)
+	- OwnProps is a reference to the class 
