@@ -1,0 +1,42 @@
+The Normal syntax is
+<BrowserRouter>
+	<Route path:'/' exact componenet={components_name}/>
+	<Route path:'/second' componenet={components_name} />
+</BrowserRrouter>
+
+without the exact keyword the react-router will stop when it finds the path in the url, if it has exact it will do a complete match up
+
+React Router start reading the path with the first '/' and on
+
+<BrowserRouter> has an history object and passes the path to the BroswerRouter
+ and passes it along the router compoenents
+ 
+ if a route it's duplicated it will render both on screen one after the other
+	- it depends on the order of how you wrote the down
+	
+<Route exact={true}/> it's the same as <Route exact/>
+
+PAth Matching '/pageTwo/5'
+	it has '/' '/pagetwo' and '/pagetwo/5'
+	- It goes from left two right addin
+	
+Navigation
+	- Do NOT use anchot tag <a href='/pagetwo'></a>
+		- Your Broswe makes a request to localhost
+		- Developt server responds with the intial html again
+		- Broswe gets index.html dump old html (all local varible dumped like react/redux state)
+		- index.html load js files, and goes from initial to browser route
+		- our app starts up
+		- use Link from react-router-dom
+			-use the link tag as you would an anchor tag
+
+Browser Router -> localhost:300/pagetwo -> Uses everith after the TLD(top level domain) .com or.net or port as path
+HashRouter -> localhost:3000/#/pagetwo -> uses everythi after a # as the path -> changes to a # only one
+MemoryRouter -> localhost:3000/ -> Does use the url to track navaigation goin back does not work
+
+CreateaREactServer
+	- Dev Resources it will try to looke for literal file in the path of the server
+	- Check public directory and check those file
+	- If not the give the index.html
+	
+Putting the header inside the BrosweRouter does no re-render an static component
