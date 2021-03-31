@@ -55,7 +55,30 @@ Inmmutable Way of changin values
 		{a: 2}
 		
 redux thunk has get state
+
 		
 MapState to Props has a second argument
 (status, ownProps)
 	- OwnProps is a reference to the class 
+	
+	
+Key Interpolation for objects in Javascript
+
+return { ...statem, [action.payload.id]: action.payload};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
