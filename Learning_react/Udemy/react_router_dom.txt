@@ -40,3 +40,5 @@ CreateaREactServer
 	- If not the give the index.html
 	
 Putting the header inside the BrosweRouter does no re-render an static component
+
+reactrouter passes to the compenet props with info of the url like variables
