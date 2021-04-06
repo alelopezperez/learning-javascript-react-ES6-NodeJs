@@ -1,12 +1,6 @@
 {
   "streams": [
     {
-      "title": "Stream ID",
-      "description": "Stream With User ID",
-      "userId": "107157461724501435425",
-      "id": 2
-    },
-    {
       "title": "New stream",
       "description": "Tetsting with redirect klkl",
       "userId": "107157461724501435425",

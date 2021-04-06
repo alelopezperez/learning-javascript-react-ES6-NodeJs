@@ -66,6 +66,8 @@ Key Interpolation for objects in Javascript
 
 return { ...statem, [action.payload.id]: action.payload};
 	
+Use React when wrapping with div causes styling problem
+	-React.Fragment = <></>
 	
 	
 	
