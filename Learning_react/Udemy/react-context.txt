@@ -1,2 +1,14 @@
 Context
 	Pass info from parent to any child nested compenent
+	Two Ways to get infor into the context pipe and two ways to get it out
+
+
+Creation	
+	import React from 'react';
+
+	export default React.createContext('english');
+	
+	static contextType = LanguageContext; contextype should be the name	
+	
+	static is for propserties in class not for instances
+
