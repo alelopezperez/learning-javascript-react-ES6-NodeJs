@@ -1,0 +1,11 @@
+Akira UX or Adobe XD
+	- Use SVG
+
+Header
+	AppBAr
+		- Create a simple layout for an Vertical AppBar
+		- Default comes with postion=fixed
+	ToolBar
+		It helps stack elements horizonatlly instead of vertically
+	useScrollTrigger ElevationScroll
+		-It makes the AppBar it wraps fixed to the screen with an over the text look
