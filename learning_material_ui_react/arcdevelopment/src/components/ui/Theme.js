@@ -16,12 +16,18 @@ export default createMuiTheme({
 			main: `${arcOrange}`,
 		},
 	},
-	typography:{
-		tab:{
-			fontFamily:'Raleway',
-			textTransform:'none',
-			fontWeight:'700',
-			fontSize:'1rem',
-		}
-	}
+	typography: {
+		tab: {
+			fontFamily: 'Raleway',
+			textTransform: 'none',
+			fontWeight: '700',
+			fontSize: '1rem',
+		},
+		estimate: {
+			fontFamily: 'Pacifico',
+			fontSize: '1rem',
+			textTransform: 'none',
+			color: 'white',
+		},
+	},
 });
