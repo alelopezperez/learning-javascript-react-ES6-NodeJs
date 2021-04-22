@@ -9,3 +9,14 @@ Header
 		It helps stack elements horizonatlly instead of vertically
 	useScrollTrigger ElevationScroll
 		-It makes the AppBar it wraps fixed to the screen with an over the text look
+		
+		
+XS: phone portrait
+s: phone landscape
+
+S: tablets portrait
+M : tables landscape
+Responsive Design
+	-Drawer or burger how the tabs in menu
+	
+	
